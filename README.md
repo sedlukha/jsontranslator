@@ -1,15 +1,15 @@
-# json-auto-translate
+# json-i18n-auto-translate
 
-[![CI](https://github.com/sedlukha/json-auto-translate/actions/workflows/ci.yml/badge.svg)](https://github.com/sedlukha/json-auto-translate/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/json-auto-translate.svg)](https://www.npmjs.com/package/json-auto-translate)
-[![npm downloads](https://img.shields.io/npm/dm/json-auto-translate.svg)](https://www.npmjs.com/package/json-auto-translate)
-[![license](https://img.shields.io/npm/l/json-auto-translate.svg)](LICENSE)
+[![CI](https://github.com/sedlukha/json-i18n-auto-translate/actions/workflows/ci.yml/badge.svg)](https://github.com/sedlukha/json-i18n-auto-translate/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/json-i18n-auto-translate.svg)](https://www.npmjs.com/package/json-i18n-auto-translate)
+[![npm downloads](https://img.shields.io/npm/dm/json-i18n-auto-translate.svg)](https://www.npmjs.com/package/json-i18n-auto-translate)
+[![license](https://img.shields.io/npm/l/json-i18n-auto-translate.svg)](LICENSE)
 
 Batch-translate JSON string arrays into multiple locales via the **OpenAI chat API**. Preserves `{placeholders}`, returns a deterministic `{ text → { locale → translation } }` shape, and **always falls back to the original text** on any error so your build never breaks.
 
 ## Why?
 
-Most i18n tooling either ships a heavyweight runtime, requires a vendor SDK, or fails noisily when the model returns garbage. `json-auto-translate` is the opposite: a single function plus a tiny CLI that
+Most i18n tooling either ships a heavyweight runtime, requires a vendor SDK, or fails noisily when the model returns garbage. `json-i18n-auto-translate` is the opposite: a single function plus a tiny CLI that
 
 - batches many strings into one OpenAI request (cheap + fast),
 - preserves ICU-style placeholders like `{count}` and `{username}`,
@@ -19,7 +19,7 @@ Most i18n tooling either ships a heavyweight runtime, requires a vendor SDK, or 
 ## Installation
 
 ```bash
-npm install json-auto-translate
+npm install json-i18n-auto-translate
 ```
 
 Requires Node.js `>=18` (global `fetch`).
@@ -33,7 +33,7 @@ export OPENAI_API_KEY=sk-...
 ## Quick start
 
 ```ts
-import { translateJson } from "json-auto-translate"
+import { translateJson } from "json-i18n-auto-translate"
 
 const result = await translateJson({
   texts: ["Hello world", "Welcome, {username}"],
@@ -49,7 +49,7 @@ const result = await translateJson({
 ## CLI
 
 ```bash
-npx json-auto-translate --input texts.json --locales ru,fr --output translations.json
+npx json-i18n-auto-translate --input texts.json --locales ru,fr --output translations.json
 ```
 
 `texts.json` must be a JSON array of strings:
@@ -77,7 +77,7 @@ npx json-auto-translate --input texts.json --locales ru,fr --output translations
 ### `translateJson(options)`
 
 ```ts
-import { translateJson, type TranslateJsonOptions, type TranslationMap } from "json-auto-translate"
+import { translateJson, type TranslateJsonOptions, type TranslationMap } from "json-i18n-auto-translate"
 ```
 
 | Option          | Type            | Required | Default                                            | Description                                                                  |
@@ -122,7 +122,7 @@ This means you can plug `translateJson` into a build step without `try/catch` an
 ## Custom fetch (testing, retries)
 
 ```ts
-import { translateJson } from "json-auto-translate"
+import { translateJson } from "json-i18n-auto-translate"
 
 await translateJson({
   texts: ["Hello"],

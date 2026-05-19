@@ -1,5 +1,5 @@
 {
-  "name": "json-auto-translate",
+  "name": "json-i18n-auto-translate",
   "version": "0.1.0",
   "description": "Batch-translate JSON key/value strings into multiple locales via the OpenAI chat API, preserving ICU-style placeholders.",
   "keywords": [
@@ -16,13 +16,13 @@
   ],
   "license": "MIT",
   "author": "sedlukha",
-  "homepage": "https://github.com/sedlukha/json-auto-translate#readme",
+  "homepage": "https://github.com/sedlukha/json-i18n-auto-translate#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sedlukha/json-auto-translate.git"
+    "url": "git+https://github.com/sedlukha/json-i18n-auto-translate.git"
   },
   "bugs": {
-    "url": "https://github.com/sedlukha/json-auto-translate/issues"
+    "url": "https://github.com/sedlukha/json-i18n-auto-translate/issues"
   },
   "type": "module",
   "main": "./dist/index.js",
@@ -34,7 +34,7 @@
     }
   },
   "bin": {
-    "json-auto-translate": "./dist/cli/index.js"
+    "json-i18n-auto-translate": "./dist/cli/index.js"
   },
   "files": [
     "dist",
