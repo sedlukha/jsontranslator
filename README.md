@@ -1,9 +1,9 @@
 # jsontranslator
 
 [![CI](https://github.com/sedlukha/jsontranslator/actions/workflows/ci.yml/badge.svg)](https://github.com/sedlukha/jsontranslator/actions/workflows/ci.yml)
-[![npm version](https://img.shields.io/npm/v/jsontranslator.svg)](https://www.npmjs.com/package/jsontranslator)
-[![npm downloads](https://img.shields.io/npm/dm/jsontranslator.svg)](https://www.npmjs.com/package/jsontranslator)
-[![license](https://img.shields.io/npm/l/jsontranslator.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/json-auto-translate.svg)](https://www.npmjs.com/package/json-auto-translate)
+[![npm downloads](https://img.shields.io/npm/dm/json-auto-translate.svg)](https://www.npmjs.com/package/json-auto-translate)
+[![license](https://img.shields.io/npm/l/json-auto-translate.svg)](LICENSE)
 
 Batch-translate JSON string arrays into multiple locales via the **OpenAI chat API**. Preserves `{placeholders}`, returns a deterministic `{ text → { locale → translation } }` shape, and **always falls back to the original text** on any error so your build never breaks.
 
@@ -19,7 +19,7 @@ Most i18n tooling either ships a heavyweight runtime, requires a vendor SDK, or 
 ## Installation
 
 ```bash
-npm install jsontranslator
+npm install json-auto-translate
 ```
 
 Requires Node.js `>=18` (global `fetch`).
@@ -33,7 +33,7 @@ export OPENAI_API_KEY=sk-...
 ## Quick start
 
 ```ts
-import { translateJson } from "jsontranslator"
+import { translateJson } from "json-auto-translate"
 
 const result = await translateJson({
   texts: ["Hello world", "Welcome, {username}"],
@@ -49,7 +49,7 @@ const result = await translateJson({
 ## CLI
 
 ```bash
-npx jsontranslator --input texts.json --locales ru,fr --output translations.json
+npx json-auto-translate --input texts.json --locales ru,fr --output translations.json
 ```
 
 `texts.json` must be a JSON array of strings:
@@ -77,7 +77,7 @@ npx jsontranslator --input texts.json --locales ru,fr --output translations.json
 ### `translateJson(options)`
 
 ```ts
-import { translateJson, type TranslateJsonOptions, type TranslationMap } from "jsontranslator"
+import { translateJson, type TranslateJsonOptions, type TranslationMap } from "json-auto-translate"
 ```
 
 | Option          | Type            | Required | Default                                            | Description                                                                  |
@@ -122,7 +122,7 @@ This means you can plug `translateJson` into a build step without `try/catch` an
 ## Custom fetch (testing, retries)
 
 ```ts
-import { translateJson } from "jsontranslator"
+import { translateJson } from "json-auto-translate"
 
 await translateJson({
   texts: ["Hello"],

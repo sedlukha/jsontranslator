@@ -1,5 +1,5 @@
 {
-  "name": "jsontranslator",
+  "name": "json-auto-translate",
   "version": "0.1.0",
   "description": "Batch-translate JSON key/value strings into multiple locales via the OpenAI chat API, preserving ICU-style placeholders.",
   "keywords": [
@@ -34,7 +34,7 @@
     }
   },
   "bin": {
-    "jsontranslator": "./dist/cli/index.js"
+    "json-auto-translate": "./dist/cli/index.js"
   },
   "files": [
     "dist",

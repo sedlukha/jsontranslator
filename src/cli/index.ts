@@ -4,7 +4,7 @@ import { parseArgs } from "node:util"
 
 import { translateJson } from "../index.js"
 
-const USAGE = `Usage: jsontranslator --input <file> --locales <list> [options]
+const USAGE = `Usage: json-auto-translate --input <file> --locales <list> [options]
 
 Options:
   -i, --input    <path>     Path to a JSON file containing an array of strings to translate.
